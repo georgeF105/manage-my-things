@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('unsorted', { title: 'To Be Sorted' });
+  res.render('unsorted', { title: 'To Be Sorted!!' });
 });
 
 module.exports = router;
