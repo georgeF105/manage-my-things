@@ -3,6 +3,17 @@
 
 <ul>
   {{#each unsorted}}
-    <li>{{this.name}}</li>
+    <li>
+        {{this.name}}
+        {{#if this.files.length}}
+            <ul>
+                {{#each this.files}}
+                    <li>
+                        {{this}}
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </li>
   {{/each}}
 </ul>

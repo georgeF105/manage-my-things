@@ -5,8 +5,16 @@ var { getUnsorted } = require('../lib/folder');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var unsorted = getUnsorted();
-  res.render('unsorted', { title: 'To Be Sorted!!', unsorted });
+  getUnsorted()
+    .then(unsorted => {
+      console.log('unsorted', unsorted);
+      res.render('unsorted', { title: 'To Be Sorted!!', unsorted });
+    })
+    .catch(err => {
+      var err = new Error(err);
+      err.status = 404;
+      next(err);
+    });
 });
 
 module.exports = router;
