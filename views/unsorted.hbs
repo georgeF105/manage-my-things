@@ -5,7 +5,7 @@
   {{#each unsorted}}
     <li>
         {{this.name}}
-        {{#if this.files.length}}
+        {{#if this.isDir}}
             <ul>
                 {{#each this.files}}
                     <li>

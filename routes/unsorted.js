@@ -7,7 +7,6 @@ var { getUnsorted } = require('../lib/folder');
 router.get('/', function(req, res, next) {
   getUnsorted()
     .then(unsorted => {
-      console.log('unsorted', unsorted);
       res.render('unsorted', { title: 'To Be Sorted!!', unsorted });
     })
     .catch(err => {
