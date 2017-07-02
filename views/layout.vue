@@ -4,7 +4,7 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <script src="https://unpkg.com/vue/dist/vue.js"></script>
+      <script src="/javascripts/vue.js"></script>
       <link rel='stylesheet' href='/stylesheets/style.css' />
     </head>
     <body>
