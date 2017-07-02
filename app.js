@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+const expressVue = require('express-vue');
 
 var index = require('./routes/index');
 var unsorted = require('./routes/unsorted');
@@ -12,8 +13,13 @@ var unsorted = require('./routes/unsorted');
 var app = express();
 
 // view engine setup
+app.engine('vue', expressVue);
+app.set('view engine', 'vue');
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('vue', {
+  componentsDir: path.join(__dirname, 'views/components'),
+  defaultLayout: 'layout'
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

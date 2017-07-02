@@ -7,7 +7,20 @@ var { getUnsorted } = require('../lib/folder');
 router.get('/', function(req, res, next) {
   getUnsorted()
     .then(unsorted => {
-      res.render('unsorted', { title: 'To Be Sorted!!', unsorted });
+      let scope = {
+        data: {
+          title: 'To Be Sorted!!',
+          unsorted
+        },
+        vue: {
+          head: {
+            title: 'Manage my things'
+          }
+        }
+      }
+      console.log('here', scope);
+
+      res.render('unsorted', scope);
     })
     .catch(err => {
       var err = new Error(err);
